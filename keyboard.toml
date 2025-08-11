@@ -1,50 +1,52 @@
-# Documentation: https://haobogu.github.io/rmk/keyboard_configuration.html
 [keyboard]
-name = "RMK Keyboard"
-product_name = "RMK Keyboard"
+name = "RELIC"
+product_name = "RELIC"
 vendor_id = 0x4c4b
 product_id = 0x4643
-manufacturer = "haobo"
-chip = "rp2040"
-
-[matrix]
-# Input and output pins are mandatory
-input_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9"]
-output_pins = ["PIN_19", "PIN_20", "PIN_21"]
-# WARNING: Currently row2col/col2row is set in RMK's feature gate, configs here do nothing actually
-# row2col = true
+manufacturer = "manni"
+board = "XIAO BLE"
 
 [layout]
 rows = 4
-cols = 3
-layers = 2
+cols = 10
+layers = 8
 keymap = [
     [
-        ["A", "B", "C"],
-        ["Kc1", "Kc2", "Kc3"],
-        ["LCtrl", "MO(1)", "LShift"],
-        ["OSL(1)", "LT(2, Kc9)", "LM(1, LShift | LGui)"]
-    ],
-    [
-        ["_", "TT(1)", "TG(2)"],
-        ["_", "_", "_"],
-        ["_", "_", "_"],
-        ["_", "_", "_"]
-    ],
+        ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+        ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+        ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+        ["_", "_", "C", "D", "E", "F", "G", "H", "_", "_"],
+    ]
 ]
 
-[light]
-# All light pins are high-active by default, uncomment if you want it to be low-active
-# capslock.pin = "PB2"
-# capslock.low_active = true
-# scrolllock.pin = "PA3"
-# scrolllock.low_active = true
-# Just ignore if no light pin is used for it
-# numslock.pin = "PA5"
-# numslock.low_active = true
+[split]
+connection = "ble"
 
+# Split central
+[split.central]
 
+rows = 4
+cols = 5
+row_offset = 0
+col_offset = 0
 
-[storage]
-# Storage feature is enabled by default
-# enabled = false
+[split.central.matrix]
+matrix_type = "normal"
+input_pins = ["P0_02", "P0_03", "P0_28", "P0_29", "P0_04"]
+output_pins = ["P1_15", "P1_14", "P1_13", "P1_12"]
+
+# Peripheral 0
+[[split.peripheral]]
+rows = 4
+cols = 5
+row_offset = 0
+col_offset = 5
+
+# Peripheral 0's matrix definition
+[split.peripheral.matrix]
+matrix_type = "normal"
+input_pins = ["P0_02", "P0_03", "P0_28", "P0_29", "P0_04"]
+output_pins = ["P1_15", "P1_14", "P1_13", "P1_12"]
+
+[ble]
+enabled = true
