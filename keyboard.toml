@@ -4,7 +4,7 @@ product_name = "RELIC"
 vendor_id = 0x4c4b
 product_id = 0x4643
 manufacturer = "manni"
-board = "XIAO BLE"
+chip = "nrf52840"
 
 [layout]
 rows = 4
