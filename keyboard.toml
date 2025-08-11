@@ -32,8 +32,8 @@ col_offset = 0
 
 [split.central.matrix]
 matrix_type = "normal"
-input_pins = ["P0_02", "P0_03", "P0_28", "P0_29", "P0_04"]
-output_pins = ["P1_15", "P1_14", "P1_13", "P1_12"]
+input_pins = ["P1_15", "P1_14", "P1_13", "P1_12"]
+output_pins = ["P0_02", "P0_03", "P0_28", "P0_29", "P0_04"]
 
 # Peripheral 0
 [[split.peripheral]]
@@ -45,8 +45,8 @@ col_offset = 5
 # Peripheral 0's matrix definition
 [split.peripheral.matrix]
 matrix_type = "normal"
-input_pins = ["P0_02", "P0_03", "P0_28", "P0_29", "P0_04"]
-output_pins = ["P1_15", "P1_14", "P1_13", "P1_12"]
+input_pins = ["P1_15", "P1_14", "P1_13", "P1_12"]
+output_pins = ["P0_02", "P0_03", "P0_28", "P0_29", "P0_04"]
 
 [ble]
 enabled = true
